@@ -299,11 +299,11 @@ func DownloadVHD(dirname string) (string, error) {
 	}
 	destinationFile := filepath.Join(dirname, pattern)
 	cmd := exec.Command("azcopy",
-		"--source",
+		"/Source",
 		source,
-		"--destination",
+		"/Destination",
 		destinationFile,
-		"--verbose",
+		"/Verbose",
 	)
 	var stderr bytes.Buffer
 	cmd.Stderr = &stderr
